@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CafeNess | Dijital Menü</title>
+
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="Dijital menümüzü inceleyebilir, ürün detaylarına göz atabilirsiniz.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1f1f1f">
+
+    <!-- Google Fonts: Playfair Display & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cairo:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dark-theme">
+
+    <!-- Sticky Header (Visible on Scroll) -->
+    <header id="sticky-header" class="sticky-header">
+        <div class="sticky-header__content">
+            <h1 class="sticky-header__title" id="sticky-title">CafeNess </h1>
+            <div class="sticky-header__actions">
+                <div class="lang-selector">
+                    <button class="lang-btn" data-lang="tr">TR</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="ar">AR</button>
+                </div>
+                <button class="btn-icon toggle-theme" aria-label="Theme Toggle">
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+                <button class="btn-icon open-search" aria-label="Open Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main id="app-container">
+
+        <!-- Hero Section -->
+        <section class="sidepage-hero">
+            <!-- Video background element (Falls back to poster image if no src/failed) -->
+            <video class="sidepage-hero__video" autoplay muted loop playsinline preload="auto"
+                poster="assets/images/hero_bg.png">
+                <source src="assets/video/hero_loop.mp4" type="video/mp4">
+            </video>
+            <div class="sidepage-hero__overlay"></div>
+
+            <div class="sidepage-hero__content">
+                <div class="logo-container">
+                    <div class="cafe-logo-placeholder">CN</div>
+                </div>
+                <h2 class="hero-tagline" data-tr="Hoş Geldiniz" data-en="Welcome" data-ar="أهلاً بكم">Hoş Geldiniz</h2>
+                <div class="hero-buttons">
+                    <button class="btn-search open-search">
+                        <i class="fa-solid fa-magnifying-glass"></i> <span data-tr="Menüde Ara" data-en="Search Menu"
+                            data-ar="البحث في القائمة">Menüde Ara</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feedback Buttons Row -->
+        <div class="quick-actions-row">
+            <button class="quick-action-btn open-survey">
+                <i class="fa-regular fa-comment-dots"></i>
+                <span data-tr="Görüş & Yorumlarınız" data-en="Feedback & Comments" data-ar="الآراء والتعليقات">Görüş &
+                    Yorumlarınız</span>
+            </button>
+
+        </div>
+
+        <!-- Main Categories (Bölümler) Grid Section -->
+        <section class="sections-content" id="categories-section">
+            <h3 class="menu-title" data-tr="Bölümler" data-en="Sections" data-ar="الأقسام">Bölümler</h3>
+            <div class="menu-grid" id="categories-grid">
+                <!-- Dynamic Categories Rendered Here -->
+            </div>
+        </section>
+
+        <!-- Dynamic Category Detail View (Hidden by Default) -->
+        <section class="category-detail-view hidden" id="category-detail-view">
+            <div class="category-detail-header-nav">
+                <button class="back-to-home" id="btn-back-home">
+                    <i class="fa-solid fa-arrow-left"></i> <span data-tr="Bölümler" data-en="Sections"
+                        data-ar="الأقسام">Bölümler</span>
+                </button>
+                <h2 class="category-detail-title" id="active-category-title">COFFEES</h2>
+            </div>
+
+            <!-- Sticky Sub-Category Bar for fast switching -->
+            <div class="category-tabs-container">
+                <div class="category-tabs" id="sticky-category-tabs">
+                    <!-- Dynamic tabs loaded here -->
+                </div>
+            </div>
+
+            <!-- Items List -->
+            <div class="category-items-list" id="category-items-list">
+                <!-- Dynamic items rendered here -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-footer">
+            <a href="https://www.instagram.com/sadiklarmarinaa?igsh=MXRtN3lldWFzMGdt" target="_blank" class="social-icon" aria-label="Instagram"><i
+                    class="fa-brands fa-instagram"></i></a>
+            <a href="tel:+905528000261" class="social-icon" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
+            <button class="open-location social-icon" aria-label="Location"><i
+                    class="fa-solid fa-location-dot"></i></button>
+        </div>
+        <strong class="footer-company-name">CafeNess </strong>
+        <p class="footer-company-address" data-tr="Kaşüstü, Yomra, Trabzon" data-en="Kasustu, Yomra, Trabzon"
+            data-ar="كاشوستو، يومرا، طرابزون">Kaşüstü, Yomra, Trabzon</p>
+        <button class="btn-page open-location" data-tr="Yol Tarifi" data-en="Directions"
+            data-ar="احصل على الاتجاهات">Yol Tarifi</button>
+
+        <div class="footer-dmenu">
+            <p data-tr="Bu sayfa Dijital Menü Platformu ile oluşturulmuştur."
+                data-en="This page was created with Digital Menu Platform."
+                data-ar="تم إنشاء هذه الصفحة بواسطة منصة القائمة الرقمية.">Bu sayfa Dijital Menü Platformu ile
+                oluşturulmuştur.</p>
+            <small>2026 &copy;</small>
+        </div>
+    </footer>
+
+    <!-- MODALS -->
+
+    <!-- Search Modal -->
+    <div id="search-modal" class="modal-container collapsed">
+        <div class="modal-header">
+            <div class="header-searchbar">
+                <i class="fa-solid fa-magnifying-glass search-bar-icon"></i>
+                <input type="search" id="search-input" autocomplete="off" placeholder="Menüde ara..."
+                    data-placeholder-tr="Menüde ara..." data-placeholder-en="Search menu..."
+                    data-placeholder-ar="البحث في القائمة...">
+            </div>
+            <button class="close-modal btn-close" data-modal="search-modal">
+                <i class="fa-solid fa-xmark"></i> <span data-tr="KAPAT" data-en="CLOSE" data-ar="إغلاق">KAPAT</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div id="search-results" class="search-list">
+                <!-- Search results list -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Survey (Feedback) Modal -->
+    <div id="survey-modal" class="modal-container collapsed">
+        <div class="modal-header">
+            <div class="title" data-tr="Görüş & Yorumlarınız" data-en="Feedback & Comments" data-ar="الآراء والتعليقات">
+                Görüş & Yorumlarınız</div>
+            <button class="close-modal btn-close" data-modal="survey-modal">
+                <i class="fa-solid fa-xmark"></i> <span data-tr="KAPAT" data-en="CLOSE" data-ar="إغلاق">KAPAT</span>
+            </button>
+        </div>
+        <div class="modal-body survey">
+            <form id="survey-form" class="form-survey">
+                <div class="survey-body">
+                    <div class="star-container">
+                        <p data-tr="Hizmetimizden memnun kaldınız mı?" data-en="Are you satisfied with our service?"
+                            data-ar="هل أنت راضٍ عن خدمتنا؟">Hizmetimizden memnun kaldınız mı?</p>
+                        <input type="hidden" name="rating" id="selected-rating" required>
+                        <div id="star-rating" class="star-rating">
+                            <span data-rating="1" class="star">&#9733;</span>
+                            <span data-rating="2" class="star">&#9733;</span>
+                            <span data-rating="3" class="star">&#9733;</span>
+                            <span data-rating="4" class="star">&#9733;</span>
+                            <span data-rating="5" class="star">&#9733;</span>
+                        </div>
+                    </div>
+                    <label for="survey-contact" class="form-label">
+                        <span data-tr="İletişim Bilginiz (isteğe bağlı)" data-en="Contact Information (optional)"
+                            data-ar="معلومات الاتصال (اختياري)">İletişim Bilginiz (isteğe bağlı)</span>
+                        <input type="text" id="survey-contact" name="contact" placeholder="E-posta veya Telefon">
+                    </label>
+                    <label for="survey-comment" class="form-label">
+                        <span data-tr="Notunuz (isteğe bağlı)" data-en="Your Comment (optional)"
+                            data-ar="ملاحظتك (اختياري)">Notunuz (isteğe bağlı)</span>
+                        <textarea name="comment" id="survey-comment" rows="4"
+                            placeholder="Görüşlerinizi buraya yazabilirsiniz..."></textarea>
+                    </label>
+                </div>
+                <button class="btn-submit" type="submit" data-tr="Gönder" data-en="Submit"
+                    data-ar="إرسال">Gönder</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Location Modal -->
+    <div id="location-modal" class="modal-container collapsed">
+        <div class="modal-header">
+            <div class="title" data-tr="Yol Tarifi" data-en="Get Directions" data-ar="احصل على الاتجاهات">Yol Tarifi
+            </div>
+            <button class="close-modal btn-close" data-modal="location-modal">
+                <i class="fa-solid fa-xmark"></i> <span data-tr="KAPAT" data-en="CLOSE" data-ar="إغلاق">KAPAT</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <!-- Google Maps Embed -->
+            <div class="map-embed-container"
+                style="margin-bottom: 20px; border-radius: var(--border-radius-md); overflow: hidden; border: 1px solid var(--glass-border); box-shadow: 0 4px 15px rgba(0,0,0,0.3); line-height: 0;">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14331.689421973368!2d39.84798961899591!3d40.96250189252167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40643ba8d52118a5%3A0x3ea0b19f71e962bf!2sCafeNess%20CAFE%20%26%20RESTAURANT!5e0!3m2!1str!2str!4v1780853862131!5m2!1str!2str"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <div class="thumb-list">
+                <a href="https://www.google.com/maps/place/40%C2%B057'40.7%22N+39%C2%B051'03.5%22E/@40.961296,39.8503193,17z"
+                    class="location-item" target="_blank">
+                    <span class="location-icon maps-google"><i class="fa-solid fa-map-location-dot"></i></span>
+                    <span data-tr="Google Maps ile Yol Tarifi" data-en="Directions via Google Maps"
+                        data-ar="الاتجاهات عبر خرائط جوجل">Google Maps ile Yol Tarifi</span>
+                </a>
+                <a href="yandexnavi://build_route_on_map?lat_to=40.96129599820981&lon_to=39.85031926960771"
+                    class="location-item" target="_blank">
+                    <span class="location-icon maps-yandex"><i class="fa-solid fa-route"></i></span>
+                    <span data-tr="Yandex ile Yol Tarifi" data-en="Directions via Yandex"
+                        data-ar="الاتجاهات عبر ياندكس">Yandex ile Yol Tarifi</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Item Detail Modal -->
+    <div id="item-detail-modal" class="modal-container collapsed">
+        <div class="modal-header transparent">
+            <button class="close-modal btn-close-circle" data-modal="item-detail-modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <div class="modal-body detail-modal-body" style="padding-top: 0;">
+            <div class="detail-image-container">
+                <img id="detail-item-image" src="" alt="Menu item"
+                    onerror="this.onerror=null; this.src='assets/images/hero_bg.png';">
+                <button class="btn-fav-toggle" id="detail-fav-btn" aria-label="Toggle Favorite">
+                    <i class="fa-regular fa-heart"></i>
+                </button>
+            </div>
+            <div class="detail-info-content">
+                <div class="detail-title-price-row">
+                    <h3 id="detail-item-title" class="detail-item-title">Item Title</h3>
+                    <span id="detail-item-price" class="detail-item-price">0.00 TL</span>
+                </div>
+                <p id="detail-item-description" class="detail-item-description">Item description here.</p>
+
+                <!-- Extra premium tags (allergens, calories, etc) -->
+                <div class="detail-metadata">
+                    <div class="metadata-section hidden" id="metadata-allergens-section">
+                        <h4 data-tr="Alerjenler:" data-en="Allergens:" data-ar="مسببات الحساسية:">Alerjenler:</h4>
+                        <div class="allergen-tags" id="detail-item-allergens"></div>
+                    </div>
+
+                    <div class="metadata-row">
+                        <div class="metadata-item hidden" id="metadata-calories">
+                            <i class="fa-solid fa-fire-flame-simple"></i>
+                            <span id="detail-item-calories">0 kcal</span>
+                        </div>
+                        <div class="metadata-item hidden" id="metadata-weight">
+                            <i class="fa-solid fa-weight-scale"></i>
+                            <span id="detail-item-weight">0g</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Script File -->
+    <script src="app.js"></script>
+</body>
+
+</html>
